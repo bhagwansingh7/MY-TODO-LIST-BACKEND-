@@ -1,7 +1,7 @@
 const express=require('express')
 const app=express()
 const userRouter=require('./src/routes/user.routes')
-// const homeRouter=require('./routes/index.routes')
+const homeRouter=require('./src/routes/home.routes')
 const dotenv=require('dotenv')
 dotenv.config();
 const cookieParser=require('cookie-parser');
@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 
-// app.use('/',homeRouter)
+app.use('/',homeRouter)
 app.use('/user',userRouter)
 
 
